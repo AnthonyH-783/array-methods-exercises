@@ -104,6 +104,20 @@ let reverseSelectionSort = (arr) => {
 let b_isGreaterThan_a = (a, b) => {
     return b - a; // Negative 
 }
-let arr = [5, 3, 8, 1];
-arr.sort(b_isGreaterThan_a)
-console.log(arr);
+//let arr = [5, 3, 8, 1];
+//arr.sort(b_isGreaterThan_a)
+//console.log(arr);
+
+/**
+ * We have an array of strings arr. We’d like to have a sorted copy of it,
+ *  but keep arr unmodified. Create a function copySorted(arr) that returns such a copy.
+ */
+
+let copySorted = (arr) =>{
+    return arr.slice().sort();
+}
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+console.log(sorted);
