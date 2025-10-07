@@ -66,6 +66,44 @@ let filterRangeInPlace = (arr, a, b) => {
         }  
     });
 }
+//let arr = [5, 3, 8, 1];
+//let in_place_filtered = filterRangeInPlace(arr, 1, 4);
+//console.log(arr);
+
+/**
+ * Sort array in decreasing order
+ */
+
+let reverseInsertionSort = (arr) => {
+
+    for(let i = 0; i < arr.length - 1; i++){
+        let j = i + 1;
+        while(j > 0 && arr[j] > arr[j - 1]){
+            let temp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = temp;
+            j--;
+        }
+    }
+}
+let reverseSelectionSort = (arr) => {
+
+    for(let i = 0; i < arr.length - 1; i++){
+        let max = arr[i];
+        
+        for(let j = i + 1; j < arr.length; j++){
+            if(arr[j] > max){
+                arr[i] = arr[j];
+                arr[j] = max;
+                max = arr[j];
+            }
+        }
+    }
+}
+
+let b_isGreaterThan_a = (a, b) => {
+    return b - a; // Negative 
+}
 let arr = [5, 3, 8, 1];
-let in_place_filtered = filterRangeInPlace(arr, 1, 4);
+arr.sort(b_isGreaterThan_a)
 console.log(arr);
